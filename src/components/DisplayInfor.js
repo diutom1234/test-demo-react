@@ -3,8 +3,26 @@ import './DisplayInfor.scss';
 import logo from '../logo.svg';
 
 class DisplayInfor extends React.Component {
-    state = {
-        isShow: true,
+    constructor(props) {
+        console.log('>>> CALL constructor');
+        super(props);
+        this.state = {
+            isShow: true,
+        }
+    }
+    componentDidMount() {
+        console.log('>>> CALL componentDidMount');
+        setTimeout(() => {
+            document.title = "Dieu hoc ReactJS";
+        }, 3000);
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('>>> CALL componentDidUpdate');
+        if (this.props.ListUsers !== prevProps.ListUsers) {
+            if (this.props.ListUsers.length === 5) {
+                alert('You have 5 users');
+            }
+        }
     }
     handleShowHide(event) {
         this.setState({

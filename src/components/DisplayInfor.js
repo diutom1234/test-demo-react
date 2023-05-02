@@ -1,5 +1,6 @@
 import React from "react";
-import './DisplayInfor.scss'
+import './DisplayInfor.scss';
+import logo from '../logo.svg';
 
 class DisplayInfor extends React.Component {
     state = {
@@ -14,6 +15,7 @@ class DisplayInfor extends React.Component {
         const { ListUsers } = this.props;
         return (
             <div className='display-infor-container'>
+                <img src={logo} />
                 <div onClick={(event) => this.handleShowHide(event)}>
                     <span>{this.state.isShow ? "Hide list Users" : "Show list Users"}</span>
                 </div>

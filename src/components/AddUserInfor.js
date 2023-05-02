@@ -6,13 +6,6 @@ class AddUserInfor extends React.Component {
         address: 'Bac Ninh',
         age: 18
     }
-
-    handleClick(event) {
-
-    }
-    handleMouseOver(event) {
-        // console.log(event.pageX);
-    }
     handleOnChangeName(event) {
         this.setState({
             name: event.target.value

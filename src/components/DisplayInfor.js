@@ -15,7 +15,7 @@ class DisplayInfor extends React.Component {
         const { ListUsers } = this.props;
         return (
             <div className='display-infor-container'>
-                <img src={logo} />
+                {/* <img src={logo} /> */}
                 <div onClick={(event) => this.handleShowHide(event)}>
                     <span>{this.state.isShow ? "Hide list Users" : "Show list Users"}</span>
                 </div>
@@ -26,6 +26,9 @@ class DisplayInfor extends React.Component {
                                 <div key={user.id} className={+user.age > 20 ? "green" : "red"}>
                                     <div>My name is {user.name}</div>
                                     <div>My age is {user.age}</div>
+                                    <div>
+                                        <button onClick={() => this.props.handleDeleteUser(user.id)}>Delete </button>
+                                    </div>
                                     <hr />
                                 </div>
                             )

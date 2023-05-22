@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './DisplayInfor.scss';
 import logo from '../logo.svg';
 
@@ -41,6 +41,15 @@ const DisplayInfor = (props) => {
         setShowHideListUser(!isShowHideListUser);
     }
 
+    console.log('>>> CALL render');
+    useEffect(
+        () => {
+            if (ListUsers.length === 0) {
+                alert('ListUsers is empty');
+            }
+            console.log('>>> CALL useEffect');
+        }, [ListUsers]
+    )
     return (
         <div className='display-infor-container'>
             <div>

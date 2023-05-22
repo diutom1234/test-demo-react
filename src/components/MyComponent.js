@@ -44,7 +44,7 @@ import DisplayInfor from "./DisplayInfor";
 // }
 
 const MyComponent = (props) => {
-    const [listUser, setListUser] = useState(
+    const [ListUsers, setListUser] = useState(
         [
             { id: 1, name: 'Dieu', age: "22" },
             { id: 2, name: 'Trang', age: "19" },
@@ -52,10 +52,10 @@ const MyComponent = (props) => {
         ]
     );
     const handleAddUser = (userObj) => {
-        setListUser([userObj, ...listUser]);
+        setListUser([userObj, ...ListUsers]);
     }
     const handleDeleteUser = (userId) => {
-        let listUserClone = listUser;
+        let listUserClone = ListUsers;
         listUserClone = listUserClone.filter((user) => user.id !== userId);
         setListUser(listUserClone);
     }
@@ -65,7 +65,7 @@ const MyComponent = (props) => {
                 <AddUserInfor handleAddUser={handleAddUser} />
                 <br /><br />
                 <DisplayInfor
-                    ListUsers={listUser}
+                    ListUsers={ListUsers}
                     handleDeleteUser={handleDeleteUser}
                 />
             </div >

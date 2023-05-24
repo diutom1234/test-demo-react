@@ -1,23 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import axios from "axios";
-import { getAllUsers } from "../../../services/apiService";
-
 const TableUser = (props) => {
 
-    const [listUsers, setListUsers] = useState([]);
-
-    // ComponentDidMount
-    useEffect(() => {
-        fetchLishUser();
-    }, []);
-
-    const fetchLishUser = async () => {
-        let res = await getAllUsers();
-        if (res.EC === 0) {
-            setListUsers(res.DT);
-        }
-    }
+    const { listUsers } = props;
 
     return (
         <>
@@ -25,6 +8,7 @@ const TableUser = (props) => {
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Username</th>
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
@@ -36,11 +20,12 @@ const TableUser = (props) => {
                         return (
                             <tr key={`table-users-${index}`}>
                                 <td>{index + 1}</td>
+                                <td>{item.id}</td>
                                 <td>{item.username}</td>
                                 <td>{item.email}</td>
                                 <td>{item.role}</td>
                                 <td>
-                                    <button className="btn btn-secondary">View</button>
+                                    <button className="btn btn-info">View</button>
                                     <button className="btn btn-warning mx-1">Update</button>
                                     <button className="btn btn-danger">Delete</button>
                                 </td>

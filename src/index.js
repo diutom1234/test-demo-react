@@ -13,6 +13,7 @@ import Dashboard from './components/Admin/Content/DashBoard';
 import ManageUser from './components/Admin/Content/ManageUser';
 import DataTable from './components/Bai1/DataTable';
 import ImageGrid from './components/Bai2/ImageGrid';
+import ImageGrid1 from './components/Bai2/test';
 import Labyrinth from './components/Bai3_Bai4/Labyrinth';
 import Mario from './components/Bai3_Bai4/Mario';
 import { ToastContainer } from 'react-toastify';
@@ -34,6 +35,8 @@ root.render(
         <Route path="/bai1" element={<DataTable />} >
         </Route>
         <Route path="/bai2" element={<ImageGrid />} >
+        </Route>
+        <Route path="/bai21" element={<ImageGrid1 />} >
         </Route>
         <Route path="/bai3-4" element={<Labyrinth />} >
         </Route>
